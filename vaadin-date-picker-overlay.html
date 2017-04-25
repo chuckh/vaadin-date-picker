@@ -258,9 +258,9 @@
       <paper-input-container>
         <label>[[label]]</label>
         <input id="input" readonly is="iron-input" autocomplete="off" bind-value="[[_formatDisplayed(selectedDate, i18n.formatDate)]]">
-        <iron-icon id="clear" suffix on-tap="_clear" icon="vaadin-date-picker:clear" showclear$="[[_showClear(selectedDate)]]"></iron-icon>
+        <iron-icon id="clear" suffix on-tap="_clear" icon="vaadin-date-picker:clear" showclear$="[[_showClear(selectedDate)]]" hidden></iron-icon>
       </paper-input-container>
-      <iron-icon id="toggle" icon="vaadin-date-picker:event" on-tap="_cancel"></iron-icon>
+      <iron-icon id="toggle" icon="vaadin-date-picker:event" on-tap="_cancel" hidden></iron-icon>
     </div>
 
     <div id="toolbar" desktop$="[[_desktopMode]]" on-tap="_toggleYearScroller" aria-hidden="true">
