@@ -492,12 +492,21 @@
       document.body.style.pointerEvents = 'none';
 
       // Workaround for Chrome 62+, without it clicks on date cells don't work
-      var _pointerEvents = this.style.pointerEvents;
-      this.style.pointerEvents = 'auto';
-      this.style.pointerEvents = _pointerEvents;
+      let chromeVersion = getChromeVersion();
+      if (chromeVersion >= 62) {
+        console.log('chromeVersion',chromeVersion);
+        var _pointerEvents = this.style.pointerEvents;
+        this.style.pointerEvents = 'auto';
+        this.style.pointerEvents = _pointerEvents;
+      }
 
       this._ignoreAnnounce = false;
     },
+
+    getChromeVersion: function() {     
+      var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
+      return raw ? parseInt(raw[2], 10) : false;
+    }
 
     // A hack needed for iOS to prevent dropdown from being clipped in an
     // ancestor container with -webkit-overflow-scrolling: touch;
