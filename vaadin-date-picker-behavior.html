@@ -495,13 +495,13 @@
       let chromeVersion = this.getChromeVersion();
       let chrome62Fix = false;
       if (chromeVersion >= 62) {
-        console.log('chromeVersion',chromeVersion);
         var _pointerEvents = this.style.pointerEvents;
         this.style.pointerEvents = 'auto';
         this.style.pointerEvents = _pointerEvents;
         chrome62Fix = true;
+        console.log('chromeVersion',chromeVersion,chrome62Fix);
+        alert('Chrome Version: ' + chromeVersion.toString() + ' -- 62 fix: ' + chrome62Fix);
       }
-      alert('Chrome Version: ' + chromeVersion.toString() + ' -- 62 fix: ' + chrome62Fix);
 
       this._ignoreAnnounce = false;
     },
