@@ -506,7 +506,7 @@
     getChromeVersion: function() {     
       var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
       return raw ? parseInt(raw[2], 10) : false;
-    }
+    },
 
     // A hack needed for iOS to prevent dropdown from being clipped in an
     // ancestor container with -webkit-overflow-scrolling: touch;
