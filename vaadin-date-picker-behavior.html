@@ -492,7 +492,7 @@
       document.body.style.pointerEvents = 'none';
 
       // Workaround for Chrome 62+, without it clicks on date cells don't work
-      let chromeVersion = getChromeVersion();
+      let chromeVersion = this.getChromeVersion();
       if (chromeVersion >= 62) {
         console.log('chromeVersion',chromeVersion);
         var _pointerEvents = this.style.pointerEvents;
