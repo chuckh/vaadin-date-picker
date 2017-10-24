@@ -116,7 +116,7 @@
     </style>
 
     <div id="title" role="heading">[[_getTitle(month, i18n.monthNames)]]</div>
-    <div id="monthGrid" on-tap="_handleTap" on-touchend="_preventDefault" on-touchstart="_onMonthGridTouchStart">
+    <div id="monthGrid" on-click="_handleTap" on-touchend="_preventDefault" on-touchstart="_onMonthGridTouchStart">
       <template is="dom-repeat" items="[[_getWeekDayNames(i18n.weekdays, i18n.weekdaysShort, showWeekNumbers, i18n.firstDayOfWeek)]]">
         <div class="weekday" role="heading" aria-label$="[[item.weekDay]]">[[item.weekDayShort]]</div>
       </template>
