@@ -144,10 +144,13 @@ If you want to replace the default input field with a custom implementation, you
 
       #clear {
         right: 28px;
+        /* display: none;
+        right: 0; */
       }
 
       #clear iron-icon {
         @apply(--vaadin-date-picker-clear-icon);
+        /* display: none; */
       }
 
       #calendar iron-icon {
@@ -199,11 +202,11 @@ If you want to replace the default input field with a custom implementation, you
           disabled$="[[disabled]]"
           readonly$="[[readonly]]"
           no-input$="[[_noInput]]" />
-      <div suffix id="clear" on-tap="_clear" role="button" aria-label$="[[i18n.clear]]">
+      <div suffix id="clear" on-tap="_clear" role="button" aria-label$="[[i18n.clear]]" hidden$="[[hideclear]]">
         <iron-icon icon="vaadin-date-picker:clear"></iron-icon>
         <paper-ripple class="circle" center></paper-ripple>
       </div>
-      <div suffix id="calendar" on-tap="_toggle" role="button" aria-label$="[[i18n.calendar]]" aria-expanded$="[[_getAriaExpanded(opened)]]">
+      <div suffix id="calendar" on-tap="_toggle" role="button" aria-label$="[[i18n.calendar]]" aria-expanded$="[[_getAriaExpanded(opened)]]"  hidden$="[[hidecalendar]]">
         <iron-icon icon="vaadin-date-picker:event"></iron-icon>
         <paper-ripple class="circle" center></paper-ripple>
       </div>
@@ -286,7 +289,26 @@ If you want to replace the default input field with a custom implementation, you
          */
         errorMessage: String,
 
-        _userInputValue: String
+        _userInputValue: String,
+
+        /**
+         * Set to true to hide clear button.
+         */
+        hideclear: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true
+        },
+
+        /**
+         * Set to true to hide calendar button.
+         */
+        hidecalendar: {
+          type: Boolean,
+          value: false,
+          reflectToAttribute: true
+        },
+        
       },
 
       observers: [
